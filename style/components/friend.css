@@ -1,0 +1,22 @@
+.friendSection {
+	width: 100%;
+	background-color: #e9ebee;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.friendInner {
+	width: 50%;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid #d3d6db;
+	border-radius: 10px;
+}
+
+.friendContainer {
+	display: flex;
+	width: 100%;
+}
