@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 15, 2020 at 10:58 PM
+-- Generation Time: May 16, 2020 at 03:46 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -51,10 +51,20 @@ INSERT INTO `chat` (`id`, `user_id`, `participant_id`, `date`) VALUES
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `img` text NOT NULL,
+  `img` text DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `post_id` int(11) NOT NULL
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `content`, `img`, `date`, `post_id`, `user_id`) VALUES
+(1, 'This is interresting', NULL, '2020-05-16 10:04:21', 1, 2),
+(2, 'hi', NULL, '2020-05-16 10:42:28', 9, 2),
+(3, 'there', NULL, '2020-05-16 10:42:37', 9, 2);
 
 -- --------------------------------------------------------
 
@@ -137,7 +147,9 @@ INSERT INTO `messages` (`id`, `content`, `img`, `user_id`, `chat_id`, `date`) VA
 (4, 'Lol', 'images/messages/1589558948.png', 1, 1, '2020-05-15 16:09:08'),
 (5, 'Lol', 'images/messages/1589558996.png', 1, 1, '2020-05-15 16:09:56'),
 (6, 'Lol', 'images/messages/1589559018.png', 1, 1, '2020-05-15 16:10:18'),
-(7, 'Lol', 'images/messages/1589569180.png', 1, 1, '2020-05-15 18:59:40');
+(7, 'Lol', 'images/messages/1589569180.png', 1, 1, '2020-05-15 18:59:40'),
+(8, 'Test', NULL, 2, 1, '2020-05-16 13:05:40'),
+(9, 'Hello', NULL, 2, 1, '2020-05-16 13:05:47');
 
 -- --------------------------------------------------------
 
@@ -159,7 +171,9 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `content`, `img`, `date`, `user_id`) VALUES
 (1, 'hello', 'images/posts/1589397444.png', '2020-05-13 19:17:24', 1),
-(2, 'New one', 'img/previewphoto.jpg', '2020-05-13 19:19:27', 2);
+(2, 'New one', 'img/previewphoto.jpg', '2020-05-13 19:19:27', 2),
+(3, 'Hello!', NULL, '2020-05-16 09:46:30', 2),
+(9, 'Screen', 'images/posts/1589623076.png', '2020-05-16 09:57:56', 2);
 
 -- --------------------------------------------------------
 
@@ -283,7 +297,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `friendRequest`
@@ -307,13 +321,13 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `profile`
