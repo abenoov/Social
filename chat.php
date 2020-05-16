@@ -11,15 +11,32 @@
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
+			padding-top: 2%;
 		}
 
 		.wrapper .chat {
-			min-width: 60%;
+			width: 60%;
 			border: 1px solid black;
 			margin-bottom: 2%; 
 		}
 
 		.wrapper .chat a {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 2%;
+			padding-right: 2%;
+		}
+
+		.wrapper .chat .img {
+			width: 20%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.wrapper .chat .img img {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;

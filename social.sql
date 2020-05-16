@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 16, 2020 at 03:46 PM
+-- Generation Time: May 16, 2020 at 10:49 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -64,7 +64,9 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `content`, `img`, `date`, `post_id`, `user_id`) VALUES
 (1, 'This is interresting', NULL, '2020-05-16 10:04:21', 1, 2),
 (2, 'hi', NULL, '2020-05-16 10:42:28', 9, 2),
-(3, 'there', NULL, '2020-05-16 10:42:37', 9, 2);
+(3, 'there', NULL, '2020-05-16 10:42:37', 9, 2),
+(4, '', NULL, '2020-05-16 17:52:08', 3, 2),
+(5, '', NULL, '2020-05-16 18:04:33', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -98,7 +100,7 @@ CREATE TABLE `friends` (
 --
 
 INSERT INTO `friends` (`id`, `user_id`, `friend_id`, `date`) VALUES
-(1, 1, 3, '2020-05-15 15:37:25');
+(3, 2, 1, '2020-05-16 19:26:22');
 
 -- --------------------------------------------------------
 
@@ -297,25 +299,25 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `friendRequest`
 --
 ALTER TABLE `friendRequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -327,7 +329,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `profile`
