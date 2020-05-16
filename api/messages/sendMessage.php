@@ -24,10 +24,15 @@
 
 			$db->query("INSERT INTO messages(content, img, user_id, chat_id) VALUES('$content', '$img_path', $user_id, $chat_id)");
 		} else {
-			$db->query("INSERT INTO messages(content, user_id, chat_id) VALUES('$content', $user_id, $chat_id')");
+			// echo "user $user_id";
+			// echo "chat $chat_id";
+			// echo "content $content";
+			$db->query("INSERT INTO messages(content, user_id, chat_id) VALUES('$content', $user_id, $chat_id)");
 		}
+		header('Location: ' . $_SERVER["HTTP_REFERER"] );
+		exit;
 	} else {
-		header("Location: $base_url"."signup.php?error=1");
+		header("Location: $base_url"."login.php?error=1");
 	}
 
  ?>

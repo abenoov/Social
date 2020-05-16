@@ -7,9 +7,10 @@
 
 		$user_id = $_SESSION["user_id"];
 
-			if(	isset($_POST["content"])){
+			if(	isset($_POST["content"]) && isset($_POST['post_id'])){
 
 				$content = $_POST["content"];
+				$post_id = $_POST["post_id"];
 
 				$img_path = NULL;
 
@@ -23,10 +24,10 @@
 
 				
 
-					$db->query("INSERT INTO posts(content, img, user_id) VALUES('$content','$img_path', $user_id)");
+					$db->query("INSERT INTO comments(content, img, post_id, user_id) VALUES('$content', '$img_path', $post_id, $user_id)");
 					// echo true;
 				} else {
-					$db->query("INSERT INTO posts(content, user_id) VALUES('$content', '$user_id')");
+					$db->query("INSERT INTO comments(content, post_id, user_id) VALUES('$content', $post_id, $user_id)");
 					// echo true;
 				}
 				header("Location: $base_url");

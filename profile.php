@@ -11,14 +11,16 @@
 	 include "./config.php";
 
 	session_start();
-	// if (isset($_SESSION["user_id"])) {
+	if (isset($_SESSION["user_id"])) {
+		$user_id = $_SESSION["user_id"];
  	?>
 	<link rel="stylesheet" type="text/css" href="style/all.css">
 	<?php 
-		$profile = $db->query("SELECT * FROM profile WHERE user_id = 1");
-		$user = $db->query("SELECT * FROM users WHERE id = 1");
+		$profile = $db->query("SELECT * FROM profile WHERE user_id = $user_id");
+		$user = $db->query("SELECT * FROM users WHERE id = $user_id");
 		if($profile->num_rows > 0) {
 			$profileRow=$profile->fetch_object();
+		}
 
 		if($user->num_rows > 0) {
 			$userRow=$user->fetch_object();
@@ -38,7 +40,6 @@
 							<div class="profileName">
 								<a href=""><?php echo $userRow->first_name." ".  $userRow->second_name; ?></a>
 							</div>
-
 							<div class="profileEdit">
 								<button>Update info</button>
 							</div>
@@ -58,11 +59,10 @@
 
 				</div>
 			</div>
-	<?php 
-		}
-		// } else {
-		// 	echo "not logged in";
-		// }
+	<?php
+		}else {
+					header("Location: $base_url"."login.php?error=1");
+				}
 	 ?>
 </body>
 </html>

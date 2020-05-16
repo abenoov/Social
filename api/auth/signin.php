@@ -18,7 +18,7 @@
 			if(sha1($password) == $row->password) {
 				session_start();
 				$_SESSION["user_id"] = $row->id;
-				// header("Location: $base_url"."feed.php");
+				header("Location: $base_url");
 			} else {
 				header("Location: $base_url"."login.php?error=3");
 			}
