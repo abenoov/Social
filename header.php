@@ -57,7 +57,7 @@
 				for (var i = 0; i < res.length; i++) {
 					searchModal.innerHTML += 
 					"<a href='./profile.php?id="+res[i].id+"'>"+
-						"<div class='wrapper'>"+
+						"<div class='wrapper-res'>"+
 							"<span>"+res[i].first_name+" "+"</span>"+
 							"<span>"+res[i].second_name+"</span>"+
 						"</div>"+

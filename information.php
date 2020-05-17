@@ -97,7 +97,7 @@
 
 
 <div class="information">
-	<form action="./api/profile/setProfile.php" method="POST">
+	<form action="./api/profile/setProfile.php" method="POST" enctype="multipart/form-data">
 
 		<div class="information-wrapper">
 			

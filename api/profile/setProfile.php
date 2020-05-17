@@ -23,7 +23,7 @@
 					$img_path = NULL;
 
 
-					if(isset($_FILES["img"])&&isset($_FILES["img"]["name"])){
+					if(isset($_FILES["img"]) && isset($_FILES["img"]["name"])){
 
 						$temp = explode(".", $_FILES["img"]["name"]);
 						$file_name = time().'.'.end($temp);
@@ -34,7 +34,7 @@
 					
 
 						$db->query("INSERT INTO profile(gender, education, family_status, img, user_id, city) VALUES('$gender', '$education', '$family_status', '$img_path', '$user_id', '$city')");
-						echo true;
+
 					} else {
 						$db->query("INSERT INTO profile(gender, education, family_status, user_id, city) VALUES('$gender', '$education', '$family_status', '$user_id', '$city')");
 						// // echo true;
@@ -42,11 +42,12 @@
 						// echo $city;
 						// echo $gender;
 						// echo $family_status;
+						echo $img_path."hi";
 					}
 					header("Location: $base_url");
 				} else {
 					
-					// header("Location: $base_url"."signup.php?error=1");
+					 header("Location: $base_url"."login.php?error=1");
 				}
 		}
 

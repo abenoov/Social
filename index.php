@@ -60,8 +60,8 @@
 	 						<input type="file" name="img" id="fileChoose" style="display: none;">
 	 					</div>
 	 					<div class="addMedia-tagFriend">
-	 						<button id="uploadFileButton"><img src="img/photos.png"> Photo/Video</button>
-	 						<button><img src="img/tag.png">Tag a friends</button>
+	 						<button id="uploadFileButton" type="button"><img src="img/photos.png"> Photo/Video</button>
+	 						<button type="button"><img src="img/tag.png">Tag a friends</button>
 	 						<button type="submit" ><img src="img/share.png" width="16" height="16">Share</button>
 	 						<a href="#" style="font-size: 13px;">Jahongir Tostimir</a>
 	 					</div>

@@ -55,7 +55,7 @@
 								<?php 
 									if($friends->num_rows > 0) {
 										while($friendsRow=$friends->fetch_object()){
-											if ($friendsRow->friend_id!=$currentProfileId && $friendsRow->user_id!=$currentProfileId) {
+											if ($friendsRow->friend_id != $user_id && $friendsRow->user_id != $user_id) {
 												echo '<input type="hidden" name="friend_id" value='.$friendsRow->id.'>';
 												echo "<button type='submit'>Add a friend</button>";
 											}

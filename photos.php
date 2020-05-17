@@ -88,14 +88,99 @@
 
 						<div class="profile-info-wrapper">
 
-							<div class="profile-info-inner">
-								<ul>
-									<li><h5>Education </h5> <span>asdsad</span> </li>
-									<li><h5>Family status </h5> <span>asddsa</span> </li>
-									<li><h5>From </h5> <span>asddsa</span> </li>
-									<li><h5>About me </h5> <span>asddsadsa</span> </li>
-								</ul>
-							</div>
+							<?php
+							
+
+							$exist = $db->query("SELECT * FROM posts");
+
+							if ($exist->num_rows > 0) {
+
+								// header("Location: $base_url"."signup.php?error=2");
+								while ($row=$exist->fetch_object()) {
+
+										// $output[] = array(
+										// 	"id"=>$row->id,
+										// 	"content"=>$row->content,
+										// 	"img"=>$row->img,
+										// 	"date"=>$row->date,
+										// 	"user_id"=>$row->user_id,
+										// );
+
+										$post_id = $row->id;
+
+										$rowLikes = 0;
+
+										$user = $db->query("SELECT * FROM users WHERE id = $row->user_id");
+										$likes = $db->query("SELECT COUNT(id) AS count FROM likes WHERE post_id = $row->id");
+										$comments = $db->query("SELECT * FROM comments WHERE post_id = $row->id");
+
+										if($user->num_rows > 0)
+											$rowUser=$user->fetch_object();
+
+										if($likes->num_rows > 0)
+											$rowLikes=$likes->fetch_object();
+										
+										$field = 
+											'<div class="newsContent">
+							 					<form  action="./api/comments/addComment.php" method="POST">
+							 						<div class="authorName">
+							 							<span><a href=""><h5>'.$rowUser->first_name.' '.$rowUser->second_name.'</h5></a></span>
+							 						</div>		
+
+							 						<div class="newsText">
+							 							<p>'.$row->content.'</p>
+							 						</div>';
+
+							 						if ($row->img != null) {
+							 							$field .= '
+								 						<div class="newsImg">
+								    						<img src="'.$row->img.'" width="100%" height="400px">
+
+								 						</div>';
+						 							}
+						 							$field .= '
+						 							'.$row->date.'
+							 						<div class="newsLike">
+							 							<img src="img/like.png">
+							 							<span>'.$rowLikes->count.'</span>
+							 							<div class="comment-btn">
+							 								<img src="img/chat.png">Comments
+							 							</div>
+							 						</div>
+
+							 						<div class="like-dislike">
+							 							<button  id="likeButton" data-postId="'.$post_id.'"><i class="fa fa-thumbs-up"></i>Like</button>
+							 							<button  id="dislikeButton" data-postId="'.$post_id.'"><i class="fa fa-thumbs-down"></i>Dislike</button>
+							 						</div>
+
+							 						<div class="comments-section">';
+							 							
+							 							 if($comments->num_rows > 0){
+															while($commentRow=$comments->fetch_object()){
+																$userComments = $db->query("SELECT * FROM users WHERE id = $commentRow->user_id");
+																		if ($userComments->num_rows>0) {
+																			$commentUserRow=$userComments->fetch_object();
+																		
+																		$field .= '<div class="comments"><a href="'.$base_url.'"profile.php?id='.$commentRow->user_id.'>'.$commentUserRow->first_name.' '.$commentUserRow->second_name.'</a><span> '.$commentRow->content.'</span></div>';
+																	}
+															}
+														 }
+							 							$field .= '
+							 							<br>
+							 							<div class="send-comment">
+												 			<input id="cm" type="text" name="content" placeholder="Write a comment...">
+												 			<input type="hidden" name="post_id" value="'.$post_id.'">
+															<button type="submit">Send</button>
+							 							</div>
+							 						</div>
+							 					</form>
+							 				</div>';
+
+							 				echo "$field";
+
+								}
+							}
+					 ?>
 
 						</div>
 

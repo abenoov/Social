@@ -4,6 +4,7 @@
 	margin-bottom: 10px;
 	display: flex;
 	justify-content: center;
+	padding-top: 2%;
 }
 
 .friendInner {
@@ -19,4 +20,55 @@
 .friendContainer {
 	display: flex;
 	width: 100%;
+	align-items: center;
+	padding: 15px;
+	justify-content: space-around;
+}
+
+
+.friend-title {
+	background-color: #f5f6f7;
+	padding: 15px;
+    border-bottom: none;
+}
+
+.friend-title-req {
+	background-color: #f5f6f7;
+	padding: 15px;
+	border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
+}
+
+.friend-title h4 {
+	color: #4b4f56;
+    font-size: 15px;
+}
+
+.friend-title-req h4 {
+	color: #4b4f56;
+    font-size: 15px;
+}
+
+.friendInformation p {
+	margin-right: 10px;
+}
+
+.no-request {
+	padding: 15px;
+}
+
+.friendContainer button {
+	background-color: #0077ed;
+    color: #fff;
+    border: none;
+    width: 150px;
+    line-height: 30px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.friendContainer button:hover {
+	background-color: #056dd4;
 }

@@ -116,7 +116,7 @@
 				</div>				
 
 				<div class="signUp-input">
-					<input type="text" name="email" placeholder="Email">
+					<input type="email" name="email" placeholder="Email">
 				</div>
 
 				<div class="signUp-input">
@@ -134,7 +134,7 @@
 				<div class="hr"></div>
 
 				<div class="to-login-link">
-					<a href="register.php">Always have an account? Log In</a>
+					<a href="./login.php">Always have an account? Log In</a>
 				</div>
 
 				</div>

@@ -38,11 +38,18 @@ header .results a {
 
 }
 
-header .results a .wrapper {
+header .results a .wrapper-res {
     margin-bottom: 15px;
     border-bottom: 1px solid #dddfe2;
-    padding: 10px 0;
+    padding: 10px 10px;
 }
+
+header .results a .wrapper-res:hover {
+   	background-color: #0077ed;
+   	color: #fff;
+   	border-radius: 6px;
+}
+
 
 header .inner input {
 	width: 90%;

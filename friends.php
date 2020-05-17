@@ -22,8 +22,8 @@
 
 		<div class="friendSection">
 			<div class="friendInner">
-				<div class="header">
-					<h1 style="text-align: center;">Requests</h1>
+				<div class="friend-title-req">
+					<h4>Requests</h4>
 				</div>
 				<?php 
 					if ($exist->num_rows>0) {
@@ -48,12 +48,12 @@
 							</div>';
 						}
 					} else {
-						echo 'There are no request';
+						echo '<div class="no-request">' . 'There are no request'. '</div>';
 					}
 				 ?>
 
-				 <div class="header" style="margin-top: 5%;">
-					<h1 style="text-align: center;">Friends</h1>
+				 <div class="friend-title" style="margin-top: 5%;">
+					<h4>Friends</h4>
 				</div>
 				
 				<?php 
@@ -84,7 +84,7 @@
 							</div>';
 						}
 					} else {
-						echo 'You do not have any friends';
+						echo '<div class="no-request">' . 'You do not have any friends'. '</div>';
 					}
 				 ?>
 

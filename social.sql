@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 16, 2020 at 10:49 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Хост: 127.0.0.1
+-- Время создания: Май 18 2020 г., 00:28
+-- Версия сервера: 10.4.11-MariaDB
+-- Версия PHP: 7.2.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `social`
+-- База данных: `social`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chat`
+-- Структура таблицы `chat`
 --
 
 CREATE TABLE `chat` (
@@ -36,16 +35,16 @@ CREATE TABLE `chat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `chat`
+-- Дамп данных таблицы `chat`
 --
 
 INSERT INTO `chat` (`id`, `user_id`, `participant_id`, `date`) VALUES
-(1, 1, 2, '2020-05-15 15:54:01');
+(1, 1, 2, '2020-05-17 21:19:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Структура таблицы `comments`
 --
 
 CREATE TABLE `comments` (
@@ -58,23 +57,20 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `comments`
+-- Дамп данных таблицы `comments`
 --
 
 INSERT INTO `comments` (`id`, `content`, `img`, `date`, `post_id`, `user_id`) VALUES
-(1, 'This is interresting', NULL, '2020-05-16 10:04:21', 1, 2),
-(2, 'hi', NULL, '2020-05-16 10:42:28', 9, 2),
-(3, 'there', NULL, '2020-05-16 10:42:37', 9, 2),
-(4, '', NULL, '2020-05-16 17:52:08', 3, 2),
-(5, '', NULL, '2020-05-16 18:04:33', 3, 2);
+(1, 'My comment', NULL, '2020-05-17 21:15:49', 5, 1),
+(2, 'Where are you Pasha???', NULL, '2020-05-17 22:18:09', 8, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `friendRequest`
+-- Структура таблицы `friendrequest`
 --
 
-CREATE TABLE `friendRequest` (
+CREATE TABLE `friendrequest` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `friend_id` int(11) NOT NULL,
@@ -85,7 +81,7 @@ CREATE TABLE `friendRequest` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `friends`
+-- Структура таблицы `friends`
 --
 
 CREATE TABLE `friends` (
@@ -96,16 +92,17 @@ CREATE TABLE `friends` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `friends`
+-- Дамп данных таблицы `friends`
 --
 
 INSERT INTO `friends` (`id`, `user_id`, `friend_id`, `date`) VALUES
-(3, 2, 1, '2020-05-16 19:26:22');
+(1, 1, 2, '2020-05-17 21:19:16'),
+(2, 3, 2, '2020-05-17 22:23:06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `likes`
+-- Структура таблицы `likes`
 --
 
 CREATE TABLE `likes` (
@@ -116,17 +113,19 @@ CREATE TABLE `likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `likes`
+-- Дамп данных таблицы `likes`
 --
 
 INSERT INTO `likes` (`id`, `post_id`, `user_id`, `date`) VALUES
-(1, 2, 1, '2020-05-15 20:14:19'),
-(2, 2, 2, '2020-05-15 20:14:19');
+(2, 6, 1, '2020-05-17 21:20:47'),
+(3, 7, 1, '2020-05-17 21:20:48'),
+(4, 9, 2, '2020-05-17 22:16:35'),
+(5, 8, 2, '2020-05-17 22:16:37');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Структура таблицы `messages`
 --
 
 CREATE TABLE `messages` (
@@ -139,24 +138,17 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `messages`
+-- Дамп данных таблицы `messages`
 --
 
 INSERT INTO `messages` (`id`, `content`, `img`, `user_id`, `chat_id`, `date`) VALUES
-(1, 'Hi', NULL, 1, 1, '2020-05-15 15:53:28'),
-(2, 'are you here?', NULL, 2, 1, '2020-05-15 15:53:28'),
-(3, 'Lol', 'images/messages/1589558917.png', 1, 1, '2020-05-15 16:08:37'),
-(4, 'Lol', 'images/messages/1589558948.png', 1, 1, '2020-05-15 16:09:08'),
-(5, 'Lol', 'images/messages/1589558996.png', 1, 1, '2020-05-15 16:09:56'),
-(6, 'Lol', 'images/messages/1589559018.png', 1, 1, '2020-05-15 16:10:18'),
-(7, 'Lol', 'images/messages/1589569180.png', 1, 1, '2020-05-15 18:59:40'),
-(8, 'Test', NULL, 2, 1, '2020-05-16 13:05:40'),
-(9, 'Hello', NULL, 2, 1, '2020-05-16 13:05:47');
+(1, 'Hello Mark ', NULL, 1, 1, '2020-05-17 21:19:30'),
+(2, 'Hello Pasha', NULL, 2, 1, '2020-05-17 21:20:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Структура таблицы `posts`
 --
 
 CREATE TABLE `posts` (
@@ -168,46 +160,42 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `posts`
+-- Дамп данных таблицы `posts`
 --
 
 INSERT INTO `posts` (`id`, `content`, `img`, `date`, `user_id`) VALUES
-(1, 'hello', 'images/posts/1589397444.png', '2020-05-13 19:17:24', 1),
-(2, 'New one', 'img/previewphoto.jpg', '2020-05-13 19:19:27', 2),
-(3, 'Hello!', NULL, '2020-05-16 09:46:30', 2),
-(9, 'Screen', 'images/posts/1589623076.png', '2020-05-16 09:57:56', 2);
+(8, 'Telegram is the best!', 'images/posts/1589753752.jpg', '2020-05-17 22:15:52', 1),
+(9, 'Facebook or Vk.com???', 'images/posts/1589753791.jpg', '2020-05-17 22:16:31', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profile`
+-- Структура таблицы `profile`
 --
 
 CREATE TABLE `profile` (
   `id` int(11) NOT NULL,
-  `bio` text DEFAULT NULL,
-  `school` text DEFAULT NULL,
-  `college` text DEFAULT NULL,
-  `job` text DEFAULT NULL,
+  `gender` text DEFAULT NULL,
+  `education` text DEFAULT NULL,
   `family_status` text DEFAULT NULL,
-  `favourite` text DEFAULT NULL,
   `img` text DEFAULT NULL,
   `user_id` int(11) NOT NULL,
-  `country` text DEFAULT NULL,
   `city` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `profile`
+-- Дамп данных таблицы `profile`
 --
 
-INSERT INTO `profile` (`id`, `bio`, `school`, `college`, `job`, `family_status`, `favourite`, `img`, `user_id`, `country`, `city`) VALUES
-(11, '', '', '', '', '', '', 'images/profile/1589398650.png', 1, 'Kazakhstan', 'Moscow');
+INSERT INTO `profile` (`id`, `gender`, `education`, `family_status`, `img`, `user_id`, `city`) VALUES
+(7, 'Male', 'phD', 'Single', 'images/profile/1589749631.jpg', 1, 'Moscow'),
+(8, 'Male', 'phD', 'Married', 'images/profile/1589750262.jpg', 2, 'San-Francisco'),
+(9, 'Male', 'phD', 'Married', 'images/profile/1589750609.jpg', 3, 'San-Francisco');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -220,125 +208,126 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `second_name`, `third_name`, `login`, `password`) VALUES
-(1, 'Alikhan', 'Nursapayev', 'Ganiuly', 'nursapayev@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
-(2, 'Mukhtar', 'Abenov', 'Sakenuly', 'mukhtarabenov@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+(1, 'Pavel', 'Durov', NULL, 'pavel@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(2, 'Mark', 'Zuckerberg', NULL, 'mark@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(3, 'Johny', 'Ive', NULL, 'johny@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `chat`
+-- Индексы таблицы `chat`
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `comments`
+-- Индексы таблицы `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `friendRequest`
+-- Индексы таблицы `friendrequest`
 --
-ALTER TABLE `friendRequest`
+ALTER TABLE `friendrequest`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `friends`
+-- Индексы таблицы `friends`
 --
 ALTER TABLE `friends`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `likes`
+-- Индексы таблицы `likes`
 --
 ALTER TABLE `likes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `messages`
+-- Индексы таблицы `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posts`
+-- Индексы таблицы `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `profile`
+-- Индексы таблицы `profile`
 --
 ALTER TABLE `profile`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `chat`
+-- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `friendrequest`
+--
+ALTER TABLE `friendrequest`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `friends`
+--
+ALTER TABLE `friends`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `likes`
+--
+ALTER TABLE `likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `friendRequest`
---
-ALTER TABLE `friendRequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `friends`
---
-ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `likes`
---
-ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `posts`
+--
+ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `profile`
+-- AUTO_INCREMENT для таблицы `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

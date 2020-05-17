@@ -17,7 +17,7 @@
 				</div>
 				<div class="logIn-input-wrapper">
 				<div class="logIn-input">
-					<input type="text" name="login" placeholder="Email">
+					<input type="email" name="login" placeholder="Email">
 				</div>
 				<div class="logIn-input">
 					<input type="password" name="password" placeholder="Password">
@@ -28,7 +28,7 @@
 						<div class="hr"></div>
 
 				<div class="to-auth-link">
-					<a href="register.php"><button>Create New Account</button></a>
+					<a href="./register.php"><button type="button">Create New Account</button></a>
 				</div>
 
 				</div>
