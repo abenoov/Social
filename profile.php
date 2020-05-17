@@ -90,10 +90,20 @@
 
 							<div class="profile-info-inner">
 								<ul>
-									<li><h5>Education </h5> <span>asdsad</span> </li>
-									<li><h5>Family status </h5> <span>asddsa</span> </li>
-									<li><h5>From </h5> <span>asddsa</span> </li>
-									<li><h5>About me </h5> <span>asddsadsa</span> </li>
+									<?php 
+										$profile2 = $db->query("SELECT * FROM profile WHERE user_id = $currentProfileId");
+										if($profile2->num_rows > 0) {
+											while($profileRow2=$profile2->fetch_object()){
+												echo '
+														<li><h5>Education </h5> <span>'.$profileRow2->education.'</span> </li>
+														<li><h5>Family status </h5> <span>'.$profileRow2->family_status.'</span> </li>
+														<li><h5>From </h5> <span>'.$profileRow2->city.'</span> </li>
+														<li><h5>Gender </h5> <span>'.$profileRow2->gender.'</span> </li>
+													';
+											}
+										}
+
+									 ?>
 								</ul>
 							</div>
 

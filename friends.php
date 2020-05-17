@@ -71,16 +71,16 @@
 							$userProfile = $db->query("SELECT * FROM profile WHERE user_id = $currentFriend");
 							$user = $db->query("SELECT * FROM users WHERE id = $currentFriend");
 							$userRow=$user->fetch_object();
-							$userProfileRow=$userProfile->fetch_object();
 							echo '<div class="friendContainer">
-								<div class="friendImg">
-									<img src="'.$userProfileRow->img.'" width="150px" height="150px">
-								</div>
 								<div class="friendInformation">
 									<p>
 										'.$userRow->first_name.' '.$userRow->second_name.' '.$userRow->third_name.' 
 									</p>
 								</div>
+								<form method="POST" action="./chat.php">
+									<input type="hidden" name="friend_id" value='.$userRow->id.'>
+									<button type="submit">Chat</button>
+								</form>
 							</div>';
 						}
 					} else {

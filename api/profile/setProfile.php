@@ -9,28 +9,18 @@
 
 		$exist = $db->query("SELECT * FROM profile WHERE user_id = '$user_id'");
 
-		if ($exist->num_rows > 0) {
-			if(	isset($_POST["bio"])&&
-					isset($_POST["school"])&&
-					isset($_POST["college"])&&
+		if (!$exist->num_rows > 0) {
+			if(	isset($_POST["education"])&&
 					isset($_POST["family_status"])&&
-					isset($_POST["favourite"])&&
-					isset($_POST["country"])&&
-					isset($_POST["city"])&&
-					isset($_POST["job"])){
+					isset($_POST["gender"])&&
+					isset($_POST["city"])){
 
-					$bio = $_POST["bio"];
-					$school = $_POST["school"];
-					$college = $_POST["college"];
+					$education = $_POST["education"];
 					$family_status = $_POST["family_status"];
-					$favourite = $_POST["favourite"];
-					$job = $_POST["job"];
-					$country = $_POST["country"];
 					$city = $_POST["city"];
+					$gender = $_POST["gender"];
 
 					$img_path = NULL;
-
-
 
 
 					if(isset($_FILES["img"])&&isset($_FILES["img"]["name"])){
@@ -43,60 +33,22 @@
 
 					
 
-						$db->query("UPDATE profile SET bio = '$bio', school = '$school', college = '$college', job = '$job', family_status = '$family_status', favourite = '$favourite', img = '$img_path', country = '$country', city='$city' WHERE user_id = '$user_id'");
+						$db->query("INSERT INTO profile(gender, education, family_status, img, user_id, city) VALUES('$gender', '$education', '$family_status', '$img_path', '$user_id', '$city')");
 						echo true;
 					} else {
-						$db->query("UPDATE profile SET bio = '$bio', school = '$school', college = '$college', job = '$job', family_status = '$family_status', favourite = '$favourite', country = '$country', city='$city' WHERE user_id = '$user_id'");
-						echo true;
-
+						$db->query("INSERT INTO profile(gender, education, family_status, user_id, city) VALUES('$gender', '$education', '$family_status', '$user_id', '$city')");
+						// // echo true;
+						// echo $education;
+						// echo $city;
+						// echo $gender;
+						// echo $family_status;
 					}
+					header("Location: $base_url");
 				} else {
 					
 					// header("Location: $base_url"."signup.php?error=1");
 				}
 		}
-		 else{
-			if(	isset($_POST["bio"]) &&
-					isset($_POST["school"]) &&
-					isset($_POST["college"]) &&
-					isset($_POST["family_status"]) &&
-					isset($_POST["favourite"]) &&
-					isset($_POST["job"])){
-
-					$bio = $_POST["bio"];
-					$school = $_POST["school"];
-					$college = $_POST["college"];
-					$family_status = $_POST["family_status"];
-					$favourite = $_POST["favourite"];
-					$job = $_POST["job"];
-					$country = $_POST["country"];
-					$city = $_POST["city"];
-
-					$img_path = NULL;
-
-
-					if(isset($_FILES["img"])&&isset($_FILES["img"]["name"])){
-
-						$temp = explode(".", $_FILES["img"]["name"]);
-						$file_name = time().'.'.end($temp);
-						move_uploaded_file($_FILES["img"]["tmp_name"], "../../images/profile/".$file_name);
-
-						$img_path = "images/profile/".$file_name;
-
-					
-
-						$db->query("INSERT INTO profile(bio, school, college, job, family_status, favourite, img, user_id, country, city) VALUES('$bio','$school','$college','$job','$family_status', '$favourite', '$img_path', '$user_id', '$country', '$city')");
-					} else {
-						$db->query("INSERT INTO profile(bio, school, college, job, family_status, favourite, user_id, country, city) VALUES('$bio','$school','$college','$job','$family_status', '$favourite', '$user_id, '$country', '$city'')");
-
-					}
-
-				} else {
-					
-					header("Location: $base_url");
-				}
-			}
-	
 
 	}
 

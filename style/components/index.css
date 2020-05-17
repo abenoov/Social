@@ -320,7 +320,6 @@
 
 .weather-inner h1 {
 	font-weight: 600;
-    font-family: Montserrat;
     font-size: 15px;
     color: #0077ed;
     text-transform: uppercase;
@@ -330,7 +329,6 @@
 }
 
 .status p {
-	font-family: Montserrat;
 	font-weight: 600;
 	color: orange;
 	margin-bottom: 5px;

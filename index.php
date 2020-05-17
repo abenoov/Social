@@ -18,6 +18,12 @@
 	if (isset($_SESSION["user_id"])) {
 		$user_id = $_SESSION["user_id"];
 		$thisUser = $db->query("SELECT * FROM users WHERE id = $user_id");
+		$profile = $db->query("SELECT * FROM profile WHERE user_id = $user_id");
+		if ($profile->num_rows>0) {
+			
+		} else{
+			header("Location:".$base_url."information.php");
+		}
 		if($thisUser->num_rows > 0)
 			$rowThisUser=$thisUser->fetch_object();
 
@@ -51,10 +57,10 @@
 	 				<form method="POST" action="./api/feed/newPost.php" enctype="multipart/form-data">
 	 					<div class="addPost" >
 	 						<input type="text" name="content" placeholder="Anything new?">
-	 						<input type="file" name="img">
+	 						<input type="file" name="img" id="fileChoose" style="display: none;">
 	 					</div>
 	 					<div class="addMedia-tagFriend">
-	 						<button><img src="img/photos.png"> Photo/Video</button>
+	 						<button id="uploadFileButton"><img src="img/photos.png"> Photo/Video</button>
 	 						<button><img src="img/tag.png">Tag a friends</button>
 	 						<button type="submit" ><img src="img/share.png" width="16" height="16">Share</button>
 	 						<a href="#" style="font-size: 13px;">Jahongir Tostimir</a>
@@ -183,6 +189,14 @@
 		 ?>
 <script async="" type="text/javascript">
 	$( document ).ready(function() {
+
+
+		var fileChoose = document.getElementById("fileChoose");
+		var uploadFileButton = document.getElementById("uploadFileButton");
+
+		uploadFileButton.addEventListener("click", function(){
+			fileChoose.click();
+		});
 		
 
 		$.ajax({
