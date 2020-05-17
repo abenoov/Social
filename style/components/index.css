@@ -63,6 +63,11 @@
 	font-weight: 600;
 	padding: 5px;
 	justify-content: center;
+	cursor: pointer;
+}
+
+.addMedia-tagFriend button:hover {
+	background-color: #ebedf0;
 }
 
 .addMedia-tagFriend {
@@ -129,6 +134,7 @@
 .newsLike {
 	display: flex;
 	align-items: center;
+	margin: 20px 0px;
 }
 
 .newsLike img {
@@ -145,16 +151,8 @@
 	font-size: 13px;
 }
 
-.comment-btn button {
-	width: 140px;
-	height: 40px;
-	border: none;
-	border-radius: 20px;
-	background-color: #f5f6f7;
-	color: #4b4f56;
-	font-size: 13px;
-	font-weight: 600;
-	justify-content: center;
+.comment-btn {
+	display: flex;
 }
 
 .comment-btn button {
@@ -318,4 +316,27 @@
 	margin-top: 15px;
 	margin-bottom: 15px;
 	color: #4b4f56;
+}
+
+.weather-inner h1 {
+	font-weight: 600;
+    font-family: Montserrat;
+    font-size: 15px;
+    color: #0077ed;
+    text-transform: uppercase;
+	background: linear-gradient(90deg, rgba(0,119,237,1) 0%, rgba(252,70,107,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.status p {
+	font-family: Montserrat;
+	font-weight: 600;
+	color: orange;
+	margin-bottom: 5px;
+	font-size: 15px;
+	text-transform: uppercase;
+	background: linear-gradient(90deg, rgba(0,119,237,1) 0%, rgba(252,70,107,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

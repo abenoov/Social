@@ -2,49 +2,9 @@
 <html>
 <head>
 	<title>My Chats</title>
+	<link rel="stylesheet" type="text/css" href="style/all.css">
 </head>
 <body>
-
-	<style type="text/css">
-		.wrapper {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: flex-start;
-			padding-top: 2%;
-		}
-
-		.wrapper .chat {
-			width: 60%;
-			border: 1px solid black;
-			margin-bottom: 2%; 
-		}
-
-		.wrapper .chat a {
-			width: 100%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding-left: 2%;
-			padding-right: 2%;
-		}
-
-		.wrapper .chat .img {
-			width: 20%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.wrapper .chat .img img {
-			width: 100%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-	</style>
-
-
 	<?php
      include("./header.php");
      include "./db.php";
@@ -55,7 +15,15 @@
 		$user_id = $_SESSION["user_id"];
  	?>
 
+ 		<div class="chatTitle">
+ 			<div class="chatTitle-inner">
+ 			<h4>Chats</h4>
+	</div> 			
+			</div>
+
 		<div class="wrapper">
+
+
 			<?php 
 			$chats = "";
 				$exist = $db->query("SELECT * FROM chat WHERE user_id = $user_id OR participant_id = $user_id");

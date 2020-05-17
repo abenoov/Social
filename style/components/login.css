@@ -1,0 +1,97 @@
+.logIn {
+	width: 100%;
+	padding: 10% 0;
+	text-align: center;
+}
+
+.logIn-wrapper {
+}
+
+.logIn-inner {
+	display: flex;
+	justify-content: center;
+}
+
+.logIn-input-wrapper {
+	width: 400px;
+	display: block;
+	padding: 20px 0;
+	margin: 0 50px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.logIn-input {
+	padding: 6px 0;
+}
+
+.logIn-input input {
+	width: 80%;
+	line-height: 25px;
+	font-size: 17px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    color: #1d2129;
+    border-radius: 6px;
+}
+
+.logIn-btn {
+	padding: 6px 0;
+}
+
+.logIn-btn button {
+	width: 354px;
+	font-size: 20px;
+	border-radius: 6px;
+	border: none;
+	color: #fff;
+	background-color: #0077ed;
+	line-height: 53px;
+	cursor: pointer;
+}
+
+.hr {
+	border-bottom: 1px solid #dadde1;
+    margin: 20px 23px;
+}
+
+.to-auth-link {
+	padding: 6px 0;
+
+}
+
+.to-auth-link button {
+	width: 220px;
+	background-color: #42b72a;
+	color: #fff;
+	font-size: 20px;
+	line-height: 53px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+
+}
+
+.to-auth-link button:hover {
+	background-color: #36a420;
+}
+
+.logotype {
+	margin: 0 50px;
+}
+
+.logotype img {
+	margin-top: 60px;
+}
+
+.logIn-wrapper p {
+	display: flex;
+	justify-content: center;
+	margin-left: -45%;
+	font-size: 20px;
+}
+
+.logIn-wrapper p strong {
+	margin-right: 5px;
+}

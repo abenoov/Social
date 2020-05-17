@@ -1,19 +1,19 @@
 <link rel="stylesheet" type="text/css" href="style/all.css">
 <header>
 	<div class="inner">
-		<button class="logo"><img src="img/logo.png"></button>
+		<a href="index.php"><button class="logo"><img src="img/logo.png"></button></a>
 		<div class="search-wrapper">
+			<img src="img/search.png">
 			<input id="searchInput" type="" name="">
 			<div class="results hidden" id="results">
 				
 			</div>
 			<div id="back" class="hidden"></div>
 		</div>
-		<div class="buttons left">
-				<button><img src="">Mukhtar</button>
-				<button><img src="">Main</button>
-				<button><img src="">Messanger</button>
-				<a href="api/auth/logout.php"><img src="">LogOut</a>
+		<div class="buttons-left">
+				<a href="index.php"><img src="img/home.png"></a>
+				<a href="chat.php"><img src="img/messenger-white.png"></a>
+				<a href="api/auth/logout.php"><img src="img/exit.png"></a>
 		</div>
 <!-- 		<div class="buttons right">
 				<button><img src=""></button>
@@ -58,7 +58,7 @@
 					searchModal.innerHTML += 
 					"<a href='./profile.php?id="+res[i].id+"'>"+
 						"<div class='wrapper'>"+
-							"<span>"+res[i].first_name+"</span>"+
+							"<span>"+res[i].first_name+" "+"</span>"+
 							"<span>"+res[i].second_name+"</span>"+
 						"</div>"+
 					"</a>"

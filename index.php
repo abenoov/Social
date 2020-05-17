@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Feed</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style/all.css">
 </head>
@@ -30,9 +30,9 @@
 				<h4>Quick Links</h4>
 				<div class="quickLinks">
 					<ul>
-	 				<li><a href=""><img src="img/news.png">News</a></li>
+	 				<li><a href="https://edition.cnn.com/"><img src="img/news.png">News</a></li>
 	 				<li><a href="./chat.php"><img src="img/messanger.png">Messenger</a></li>
-	 				<li><a href=""><img src="img/watch.png">Watch</a></li>
+	 				<li><a href="./video.php"><img src="img/watch.png">Watch</a></li>
 	 				</ul>
 	 			</div>
 
@@ -56,9 +56,10 @@
 	 					<div class="addMedia-tagFriend">
 	 						<button><img src="img/photos.png"> Photo/Video</button>
 	 						<button><img src="img/tag.png">Tag a friends</button>
-	 						<a href="" style="font-size: 13px;">Alikhon Nursapayev</a>
+	 						<button type="submit" ><img src="img/share.png" width="16" height="16">Share</button>
+	 						<a href="#" style="font-size: 13px;">Jahongir Tostimir</a>
 	 					</div>
-	 					<button type="submit" >Share</button>
+	 					
 	 				</form>
 	 			</div>
 	 			
@@ -67,11 +68,11 @@
 
 	 				<div class="preview">
 	 						<div class="authorName">
-	 							<span><a href=""><h5>Pavel Durov</h5></a></span>
+	 							<span><a href=""><h5>Author's Signature</h5></a></span>
 	 						</div>
 
 	 						<div class="previewText">
-	 							<p>Preview text, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	 							<p>We are talented group of developers who designed a social network connecting communities to make their own tight knitted environment. Our project is about meeting the people with common interests ,being aware of surrounding events and news etc. All rights reserved (c) 2020.</p>
 	 						</div>
 	 				</div>
 
@@ -132,7 +133,7 @@
 							 							<img src="img/like.png">
 							 							<span>'.$rowLikes->count.'</span>
 							 							<div class="comment-btn">
-							 								<a href="#"><button><img src="img/chat.png">Comments</button></a>
+							 								<img src="img/chat.png">Comments
 							 							</div>
 							 						</div>
 
@@ -156,7 +157,7 @@
 							 							$field .= '
 							 							<br>
 							 							<div class="send-comment">
-												 			<input type="text" name="content" placeholder="Write a comment...">
+												 			<input id="cm" type="text" name="content" placeholder="Write a comment...">
 												 			<input type="hidden" name="post_id" value="'.$post_id.'">
 															<button type="submit">Send</button>
 							 							</div>
@@ -268,7 +269,7 @@
 
 				"<div class='status'>"+
 					"<p>Today: "+description+"</p>"+
-					"<p>Temperature: "+(temperature-273,15)+"</p>"+
+					"<p>Temperature: "+(temperature-273,15)+ "&#176;"+"</p>"+
 				"</div>"+
 			"</div>";
 	}

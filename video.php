@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile</title>
+	<title>My Videos</title>
 </head>
 <body>
 
@@ -76,10 +76,10 @@
 				<div class="profileInfo">
 					<div class="profileInfo-inner">
 						<div class="profileInfo-btn">
-							<a class="active" href="./profile.php">Information</a>
+							<a href="./profile.php">Information</a>
 							<a href="./friends.php">Friends</a>
 							<a href="./photos.php">Photo</a>
-							<a href="./video.php">Video</a>
+							<a class="active" href="./video.php">Video</a>
 						</div>
 					</div>
 				</div>
@@ -90,10 +90,10 @@
 
 							<div class="profile-info-inner">
 								<ul>
-									<li><h5>Education </h5> <span>asdsad</span> </li>
-									<li><h5>Family status </h5> <span>asddsa</span> </li>
-									<li><h5>From </h5> <span>asddsa</span> </li>
-									<li><h5>About me </h5> <span>asddsadsa</span> </li>
+									<li><iframe style="border-radius: 10px;" width="100%" height="280" width="853" height="480" src="https://www.youtube.com/embed/yDGNbgJP0lI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+									<li><iframe style="border-radius: 10px;" width="100%" height="280" src="https://www.youtube.com/embed/wC-4aR4SgLU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+									<li><iframe style="border-radius: 10px;" width="100%" height="280" src="https://www.youtube.com/embed/dc0KW15FuXE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+									<li><iframe style="border-radius: 10px;" width="100%" height="280" src="https://www.youtube.com/embed/7nHfIwjgPCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
 								</ul>
 							</div>
 

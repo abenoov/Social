@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile</title>
+	<title>My Photos</title>
 </head>
 <body>
 
@@ -76,9 +76,9 @@
 				<div class="profileInfo">
 					<div class="profileInfo-inner">
 						<div class="profileInfo-btn">
-							<a class="active" href="./profile.php">Information</a>
+							<a href="./profile.php">Information</a>
 							<a href="./friends.php">Friends</a>
-							<a href="./photos.php">Photo</a>
+							<a class="active" href="photos.php">Photo</a>
 							<a href="./video.php">Video</a>
 						</div>
 					</div>

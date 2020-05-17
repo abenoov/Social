@@ -2,88 +2,9 @@
 <html>
 <head>
 	<title>Messages</title>
+	<link rel="stylesheet" type="text/css" href="style/all.css">
 </head>
 <body>
-
-	<style type="text/css">
-		.wrapper {
-			width: 100%;
-			min-height: 100vh;
-			display: flex;
-			justify-content: center;
-		}
-
-		.wrapper-second {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			min-height: 100vh;
-		}
-
-		.wrapper-second form {
-			width: 80%;
-			display: flex;
-			justify-content: center;
-			align-content: center;
-			padding: 5px;
-		}
-		.wrapper-second form input {
-			width: 80%;
-			padding: 5px;
-			margin-right: 2%;
-		}
-		.wrapper .wrapper-inner {
-			width: 80%;
-			background-color: lightgrey;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			min-height: 90%;
-		}
-
-		.wrapper .wrapper-inner .bubbles {
-			width: 100%;
-			display: flex;
-		}
-
-		.wrapper .wrapper-inner .bubbles .message {
-			width: 100%;
-			display: flex;
-			justify-content: center; 
-			align-items: center;
-			flex-wrap: wrap;
-		}
-
-		.wrapper .wrapper-inner .bubbles .message .image {
-			width: 8%;
-			border-radius: 100px;
-			margin-right: 2%;
-		}
-		
-		.wrapper .wrapper-inner .bubbles .message .image img {
-			width: 100%;
-			border-radius: 100px;
-		}
-
-		.wrapper .wrapper-inner .bubbles .message.left {
-			justify-self: flex-start;
-		}
-
-		.wrapper .wrapper-inner .bubbles .message.right {
-			justify-self: flex-end;
-		}
-
-		.wrapper .wrapper-inner .bubbles .message .messageContainer {
-			width: 80%;
-			display: flex;
-			justify-content: space-between;
-		}
-		.wrapper .wrapper-inner .bubbles .message .messageContainer .date {
-			font-size: 10px;
-		}
-	</style>
-
 	<?php
      include("./header.php");
      include "./db.php";
@@ -98,7 +19,14 @@
 
  		<div class="wrapper">
  			<div class="wrapper-second">
+ 				<div class="messagesTitle">
+	 					<div class="messagesTitle-inner">
+	 						<h4>Messages</h4>
+	 					</div>
+	 				</div>
 	 			<div class="wrapper-inner">
+
+
 
 	 				<?php
 	 					$exist = $db->query("SELECT * FROM messages WHERE chat_id = $chat_id ORDER BY date");
@@ -167,7 +95,7 @@
 
 	 			</div>
 					<form method="POST" action="./api/messages/sendMessage.php">
-						<input type="text" name="content">
+						<input type="text" name="content" placeholder="Type something...">
 						<input type="hidden" name="user_id" value=<?php echo $user_id; ?>>
 						<input type="hidden" name="chat_id" value=<?php echo $chat_id; ?>>
 						<button type="send">Send</button>

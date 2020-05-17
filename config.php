@@ -1,5 +1,5 @@
 <?php 
-	$base_url = "/socialMukhtar/";
-	$img_path = "/socialMukhtar/image/"
+	$base_url = "/Social/";
+	$img_path = "/Social/image/"
 
  ?>
